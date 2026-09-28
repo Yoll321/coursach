@@ -6,7 +6,7 @@
 
 #include "parallel_mean.hpp"
 
-std::vector<double> generateData(size_t size = 1'000'000'000) {
+std::vector<double> generateData(size_t size = 300'000'000) {
     std::mt19937 gen(std::random_device{}());
     std::uniform_real_distribution<double> dist(0.0, 100.0);
 
