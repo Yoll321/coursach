@@ -26,3 +26,17 @@ add_executable(parallel_mean
 target_link_libraries(parallel_mean
     PRIVATE
         parallel_mean_lib)
+
+set(CPACK_PACKAGE_NAME "parallel_mean")
+set(CPACK_PACKAGE_VENDOR "nom4")
+set(CPACK_PACKAGE_CONTACT "nom4@tpu.ru")
+set(CPACK_PACKAGE_DESCRIPTION_SUMMARY "Parallelism demonstration")
+
+if(APPLE)
+    set(CPACK_GENERATOR "DragNDrop")
+elseif(UNIX)
+    set(CPACK_GENERATOR "DEB")
+    set(CPACK_DEBIAN_PACKAGE_MAINTAINER "nom4@tpu.ru")
+endif()
+
+include(CPack)
